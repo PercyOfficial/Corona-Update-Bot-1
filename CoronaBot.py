@@ -2,9 +2,9 @@ from telethon import TelegramClient, events
 import json
 import requests
 
-APP_ID=3964155 #my.telegram.org
-APP_HASH='95136f46ae1425c4272596ce27543e99' #my.telegram.org
-BOTT=''#@botfather
+APP_ID=3638699 #my.telegram.org
+APP_HASH='f8dd35ae7fa3d79a62b1e4cd1c381de8' #my.telegram.org
+BOTT='1807427083:AAHlyYksryb1jhpEELBzYx52_QEXmT3Ff9E'#@botfather
 
 bot = TelegramClient('bot', APP_ID, APP_HASH).start(bot_token=BOTT)
 
