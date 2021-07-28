@@ -6,7 +6,7 @@ APP_ID=3638699 #my.telegram.org
 APP_HASH='f8dd35ae7fa3d79a62b1e4cd1c381de8' #my.telegram.org
 BOTT='1807427083:AAHlyYksryb1jhpEELBzYx52_QEXmT3Ff9E'#@botfather
 
-bot = TelegramClient('bot', APP_ID, APP_HASH).start(bot_token=BOTT)
+cortana = TelegramClient('bot', APP_ID, APP_HASH).start(bot_token=BOTT)
 
 
 
@@ -82,23 +82,23 @@ def sta():
 
 
 
-@bot.on(events.NewMessage(pattern='/start'))
+@cortana.on(events.NewMessage(pattern='/start'))
 async def start(event):
     staat(event.original_update.message.peer_id.user_id)
     raise events.StopPropagation
 
 
-@bot.on(events.NewMessage(pattern='/corona'))
+@cortana.on(events.NewMessage(pattern='/corona'))
 async def corona(event):
     await event.respond(staa(),parse_mode='html')
     raise events.StopPropagation
 
-@bot.on(events.NewMessage(pattern='/corona {variabla}'))
+@cortana.on(events.NewMessage(pattern='/corona {variabla}'))
 async def corona(event):
     await event.respond(sta(),parse_mode='MARKDOWN')
     raise events.StopPropagation
 
-@bot.on(events.NewMessage(pattern='/help'))
+@cortana.on(events.NewMessage(pattern='/help'))
 async def help(event):
     await event.respond('නවතම කොරෝනා ප්‍රවෘත්ති බැලීමට /corona command භාවිතා කරන්න')
     raise events.StopPropagation
